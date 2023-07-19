@@ -6,7 +6,7 @@ let suffix = "vh"
 let highestNumber= 0
 
 function loopthroughloggedexpenses(){
-    const ulEl = document.querySelector("ul")  
+    const graphEl = document.querySelector(".listexpensegraph")  
     let graph=""
     
     let arrayofdailyspend=[]
@@ -17,7 +17,7 @@ function loopthroughloggedexpenses(){
     <div>
     <p class="tooltip" >$${dailyexpense.amount}</p> 
     <p class="box" style="height:${scaledForGraph}${suffix};" ></p>
-      <li>${dailyexpense.day}</li>
+      <p class="day">${dailyexpense.day}</p>
     </div>
  
   ` 
@@ -26,7 +26,7 @@ function loopthroughloggedexpenses(){
          highestNumber += Number(highestdailyspend(arrayofdailyspend))
          let highestNumberWithSuffix = highestdailyspend(arrayofdailyspend) + suffix           
           // showTooltip(highestdailyspend(arrayofdailyspend))
- ulEl.innerHTML = graph
+ graphEl.innerHTML = graph
  
  colourhighestspend(highestNumberWithSuffix)
 }
