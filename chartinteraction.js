@@ -15,11 +15,10 @@ function loopthroughloggedexpenses(){
          arrayofdailyspend.push(scaledForGraph)    
           graph += `
     <div>
-    <p class="tooltip" >$${dailyexpense.amount}</p> 
-    <p class="box" style="height:${scaledForGraph}${suffix};" ></p>
-      <p class="day">${dailyexpense.day}</p>
-    </div>
- 
+        <p class="tooltip" >$${dailyexpense.amount}</p> 
+        <p class="box" style="height:${scaledForGraph}${suffix};" ></p>
+        <p class="day">${dailyexpense.day}</p>
+     </div>
   ` 
          })
          
