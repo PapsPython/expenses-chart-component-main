@@ -53,8 +53,6 @@
   {
     display: grid;
     grid-template-columns: repeat(7,45px);
-   
-    justify-content:center;
     height: 50vh;
   }
 
