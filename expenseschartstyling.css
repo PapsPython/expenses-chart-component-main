@@ -49,12 +49,18 @@
   }
   
 
-  .listexpensegraph{
+  .listexpensegraph
+  {
     display: grid;
     grid-template-columns: repeat(7,45px);
+   
     justify-content:center;
     height: 50vh;
   }
+
+  /* .gridme{
+    grid-template-rows: repeat(3,1fr);
+  } */
   
   .tooltip{
     max-width:fit-content;
@@ -82,10 +88,11 @@
       background-color:hsl(186, 34%, 60%,0.6);
    }
   
-   .day{
-    position: relative;
-    bottom: 20px;
-    font-size: 1rem;
+  .day{
+     position: relative; 
+     top:-40px; 
+    font-size: 0.9rem;
+    height: fit-content;
   }
   
   .blue{
@@ -96,6 +103,7 @@
     background-color: white;
   }
 
+  
   .monthstakeaways{
     display: flex;
     justify-content: space-between;

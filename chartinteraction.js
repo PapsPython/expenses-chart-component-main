@@ -14,18 +14,16 @@ function loopthroughloggedexpenses(){
            let scaledForGraph =(dailyexpense.amount*0.75).toFixed(2) 
          arrayofdailyspend.push(scaledForGraph)    
           graph += `
-    <div>
+      <div class ="gridme">
         <p class="tooltip" >$${dailyexpense.amount}</p> 
-        <p class="box" style="height:${scaledForGraph}${suffix};" ></p>
-        <p class="day">${dailyexpense.day}</p>
-     </div>
+        <p class="box" style="height:${scaledForGraph}${suffix};"></p>
+      </div>
   ` 
          })
          
-         highestNumber += Number(highestdailyspend(arrayofdailyspend))
+         highestNumber = Number(highestdailyspend(arrayofdailyspend))
          let highestNumberWithSuffix = highestdailyspend(arrayofdailyspend) + suffix           
-          // showTooltip(highestdailyspend(arrayofdailyspend))
- graphEl.innerHTML = graph
+     graphEl.innerHTML = graph
  
  colourhighestspend(highestNumberWithSuffix)
 }
@@ -56,10 +54,16 @@ function colourhighestspend(a){
 }
 
 function showTooltip(){
-if(this.classList[0] === "box"){
+if(this.classList.contains("box")){
   let height = this.style.height
 const arrayOfHeightStrings = height.split("") 
-const heightWithoutSuffix = Number(arrayOfHeightStrings[0] + arrayOfHeightStrings[1]) 
+// const numbersinarrayOfHeightStrings = arrayOfHeightStrings.filter(heightstring => {
+//   if (isNaN(Number(heightstring))){
+//     return heightstring
+//   }
+// })
+// console.log(numbersinarrayOfHeightStrings)
+const heightWithoutSuffix = Number(arrayOfHeightStrings[0] + arrayOfHeightStrings[1]) //what if 3 numbs use filter fxn
 let toolTipPosition = (highestNumber-2.6)  - heightWithoutSuffix 
 this.previousElementSibling.style.transform = `translateY(${toolTipPosition}${suffix})`
 this.previousElementSibling.style.visibility = "visible"
@@ -68,7 +72,7 @@ this.previousElementSibling.style.visibility = "visible"
 }
 }
 
- //would not want to repeat this ava
+
  const pEl = document.querySelectorAll("p")
  pEl.forEach(p => p.addEventListener("mouseenter",showTooltip))
 
