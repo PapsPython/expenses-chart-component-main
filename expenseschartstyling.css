@@ -56,9 +56,7 @@
     height: 50vh;
   }
 
-  /* .gridme{
-    grid-template-rows: repeat(3,1fr);
-  } */
+  
   
   .tooltip{
     max-width:fit-content;
