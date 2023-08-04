@@ -52,14 +52,8 @@
   .listexpensegraph
   {
     display: grid;
-    grid-template-columns: repeat(7,45px);
+    grid-template-columns: repeat(7,45px); 
     height: 50vh;
-  }
-
-  
-  
-  .tooltip{
-    max-width:fit-content;
   }
   
   .box{
@@ -85,7 +79,7 @@
    }
   
   .day{
-     position: relative; 
+    position: relative; 
      top:-40px; 
     font-size: 0.9rem;
     height: fit-content;
@@ -135,6 +129,7 @@
     font-size: 0.8rem;
     border-radius: 5px;
     transition: 10ms step-end;
+    max-width:fit-content;
    }
   
   hr{
